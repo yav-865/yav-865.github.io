@@ -1,0 +1,578 @@
+$color-blue: #306EF7
+$color-grey: #707070
+
+
+html
+    background-color: #000
+   
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'Poppins', sans-serif
+    color: #ffffff
+    font-size: 16px
+
+a
+    text-decoration: none
+
+.mobile__nav
+    display: none
+
+.container 
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 20px
+
+.btns
+    display: flex
+    margin-bottom: 20px
+.btn
+    font-size: 16px
+    color: #ffffff
+    background-color: $color-blue
+    outline: none
+    border: 0
+    border-radius: 5px
+    font-weight: 500
+    cursor: pointer
+    transition: background-color .3s ease-in-out
+    padding: 15px 20px
+    &:hover
+        background-color: #254da3  
+    &-transparent
+        margin-left: 25px
+        background-color: transparent
+        color: $color-grey
+        border: 1px solid $color-grey
+        transition: background-color .3s ease-in-out
+        &:hover
+            background-color: rgba(102,102, 102,0.4)
+.main__title
+    font-weight: 700
+    font-size: 40px
+    text-align: center
+    span
+         font-size: 40px
+
+/*mobile menu*/
+#menu__toggle 
+        opacity: 0
+#menu__toggle:checked + .menu__btn > span 
+        transform: rotate(45deg)
+#menu__toggle:checked + .menu__btn > span::before 
+    top: 0
+    transform: rotate(0deg)
+#menu__toggle:checked + .menu__btn > span::after 
+    top: 0
+    transform: rotate(90deg)
+#menu__toggle:checked ~ .menu__box
+    right: 0 !important
+.menu__btn 
+    position: fixed
+    top: 35px
+    right: 20px
+    width: 26px
+    height: 26px
+    cursor: pointer
+    z-index: 1
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after 
+    display: block
+    position: absolute
+    width: 100%
+    height: 2px
+    background-color: $color-blue
+    transition-duration: .25s
+
+.menu__btn > span::before 
+    content: ''
+    top: -8px
+
+.menu__btn > span::after 
+    content: ''
+    top: 8px
+
+.menu__box 
+    display: block
+    position: fixed
+    top: 0
+    right: -100%
+    width: 300px
+    height: 100%
+    margin: 0
+    padding: 80px 0
+    list-style: none
+    background-color: #0D0D0D
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4)
+    transition-duration: .25s
+
+.menu__item 
+    display: block
+    padding: 12px 24px
+    color: #ffffff
+    font-size: 20px
+    text-decoration: none
+    transition-duration: .25s
+/*header*/
+.header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 40px
+    &__wrapper
+        display: flex
+        align-items: center
+    &__img
+        margin-right: 16px
+    &__name
+        font-weight: 800
+        font-size: 25px
+    &__list
+        display: flex
+        list-style: none
+    &__item
+        margin-right: 37px
+        a
+            color: $color-grey
+            font-weight: 600
+            cursor: pointer
+            transition: color .3s ease-in-out
+            &:hover
+                color: $color-blue
+    &__item:last-child
+        margin-right: 0
+    &__sign
+        a
+            margin-right: 24px
+            color: $color-grey
+            font-weight: 600
+            box-shadow: inset 0 0 0 0 #54b3d6
+            transition: color .3s ease-in-out
+            &:hover
+                color: #ffffff
+    &__button
+        padding: 10px 20px
+/*promo*/
+.promo
+    min-height: 650px
+    padding: 20px 0
+    margin-bottom: 70px
+    &__title
+        font-size: 50px
+        font-weight: 700
+        text-align: center
+        margin-bottom: 60px
+        span
+            background-image: linear-gradient(to left, #FFBF84, #FE6783)
+            color: transparent
+            background-clip: text
+            -webkit-background-clip: text
+            font-size: 50px
+    &__descr
+        font-size: 25px
+        font-weight: 600
+        text-align: center
+        margin-bottom: 50px
+    &__content
+        display: flex
+        flex-direction: column
+        align-items: center
+   
+    &__count
+        display: flex
+        align-items: center
+    &__dot
+        margin-right: 10px
+    &__text
+        span
+            font-weight: 700
+
+    /*why*/
+
+.why
+    min-height: 200px
+    padding: 20px
+    margin-bottom: 70px
+    &__content
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-top: 50px
+    &__item
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 27%
+    &__icon
+        width: 25px
+        height: 25px
+        margin-right: 8px
+    &__subtitle
+        display: flex
+        align-items: center
+        margin-bottom: 10px
+    &__profit
+        font-size: 20px
+        font-weight: 700
+    &__descr
+        color: $color-grey
+        text-align: center
+
+/*connect*/
+
+.connect
+    display: flex
+    flex-direction: column
+    align-items: center
+    min-height: 150px
+    padding: 20px
+    margin-bottom: 70px
+    &__text
+        max-width: 900px
+        text-align: center
+        color: $color-grey
+        font-size: 20px
+        margin: 20px 0 30px 0
+    &__step
+        color: $color-blue
+        font-size: 17px
+        font-weight: 700
+
+/*homepage*/
+
+.homepage
+    min-height: 500px
+    margin-bottom: 70px
+
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        padding-left: 20px
+    &__content
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        width: 50%
+        .main__title
+            text-align: left
+            margin-bottom: 40px
+            span
+                color: $color-blue
+    &__title
+        font-size: 20px
+        font-weight: 500
+        margin-bottom: 70px
+    &__list
+        margin-bottom: 50px
+    &__num
+        width: 33px
+        height: 33px
+        background-color: #2D2D2D
+        margin-right: 10px
+        padding: 15px
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 50%
+        max-width: 30px
+        max-height: 30px
+    &__pic
+        width: 45%
+        position: relative
+    &__img
+        width: 100%
+        object-fit: cover
+        position: absolute
+        bottom: 0
+        right: 0
+    &__item
+        display: flex
+        align-items: center
+        margin-bottom: 10px
+    
+/*tabs*/
+.tabs
+    min-height: 500px
+    margin-bottom: 70px
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        margin-bottom: 50px
+    &__subtitle
+        color: #0FC65C
+        font-weight: 400
+        margin-bottom: 24px
+    &__title
+        font-weight: 700
+        font-size: 40px
+        line-height: 50px
+        margin-bottom: 15px
+        span
+            font-weight: 700
+            font-size: 40px
+            color: $color-grey
+
+    &__tab
+        width: 49%
+        min-height: 450px
+        display: flex
+        flex-direction: column
+        position: relative
+        background-color: #0D0D0D
+        padding: 15px
+    &__img
+        width: 80%
+        object-fit: cover
+        position: absolute
+        right: 0
+        bottom: 0
+
+/*experts*/
+
+.experts
+    min-height: 500px
+    margin-bottom: 100px
+    .main__title
+        margin-bottom: 50px
+    &__pic
+        width: 100%
+        height: 100%
+        max-height: 300px
+        object-fit: cover
+
+/*help*/
+
+.help
+    margin-bottom: 70px
+    &__content
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    min-height: 500px
+    background: url(../img/people.png) center center/cover no-repeat
+    padding: 0 200px
+    &__title
+        font-size: 30px
+        font-weight: 600
+        text-align: center
+
+/*get-start*/
+
+.get-start
+    min-height: 300px
+    margin-bottom: 70px
+    &__wrapper
+        display: flex
+        flex-direction: column
+        align-items: center
+    &__logo
+        margin-bottom: 10px
+    &__title
+        font-size: 40px
+        font-weight: 900
+    &__subtitle
+        font-size: 30px
+        margin-bottom: 20px
+        text-align: center
+    &__count
+        display: flex
+        align-items: center
+        margin-top: 20px
+    &__dot
+        margin-right: 10px
+    &__text
+        color: $color-grey
+        font-size: 20px
+        span
+            color: #ffffff
+            font-weight: 700
+            font-size: 20px
+
+/*footer*/
+
+.footer
+    padding: 30px 20px
+    &__wrapper
+        display: flex  
+        justify-content: space-between
+        align-items: center
+    &__wrap
+        display: flex
+        align-items: center
+    &__title
+        font-size: 25px
+        font-weight: 800
+    &__img 
+        width: 40px
+        height: 40px   
+        margin-right: 10px
+    &__email
+        color: $color-grey
+        font-size: 20px     
+    &__list
+        display: flex
+        list-style: none
+        a
+            cursor: pointer
+            transition: color .3s ease-in-out
+            color: $color-grey
+            font-size: 20px
+            &:hover
+                color: $color-blue
+    &__item
+        margin-right: 20px
+        &:last-child
+            margin-right: 0
+
+@media (max-width: 920px)
+    .promo
+        min-height: 500px
+        margin-bottom: 30px
+        &__title
+            margin-bottom: 20px
+        &__descr
+            margin-bottom: 20px
+    .why
+        margin-bottom: 30px
+    .tabs
+        margin-bottom: 30px
+    .experts
+        min-height: 300px
+        margin-bottom: 30px
+    .homepage
+        &__wrapper
+            flex-direction: column
+        &__pic
+            align-self: flex-end
+            width: 60%
+        .main__title
+            text-align: center
+        &__img
+            position: relative
+        &__content
+            align-items: center
+            width: 100%
+       
+
+@media ( max-width: 845px)
+    .promo__title
+        font-size: 40px
+        span
+            font-size: 40px
+    .main__title
+        font-size: 30px
+        span
+            font-size: 30px
+    .why__profit
+        font-size: 18px
+    .connect__text
+        font-size: 16px
+    .tabs__title 
+        font-size: 30px
+        span
+            font-size: 30px
+    .tabs__tab
+        min-height: 316px
+    .tabs
+        min-height: 340px
+    .connect
+        margin-bottom: 30px
+    .homepage
+        margin-bottom: 30px
+    .help 
+        margin-bottom: 30px
+        min-height: 450px
+        padding: 0 60px
+    .get-start__logo
+        width: 100px
+        height: 110px
+    .get-start__title
+        font-size: 30px
+    .get-start__subtitle
+        font-size: 20px
+
+@media (max-width: 767px)
+    .header__nav
+        display: none
+    .mobile__nav
+        display: block
+    .mobile__sign
+         display: none
+    .header__sign
+        margin-left: 200px  
+    .footer__title
+        font-size: 20px
+    .footer__img
+        width: 30px
+        height: 30px
+    .footer__email
+        font-size: 16px
+    .footer__item
+        a
+            font-size: 16px
+    .why
+        margin-bottom: 30px
+        &__content
+            flex-direction: column
+            align-items: center
+        &__item
+            width: 50%
+            margin-bottom: 30px
+        &__descr
+            text-align: center
+
+@media (max-width: 637px)
+    .header__sign
+        margin-left: 100px
+
+@media (max-width: 500px)
+    .header__sign
+        margin-left: 0
+    .promo__title
+        font-size: 30px
+        span
+            font-size: 30px
+    .promo__descr
+        font-size: 16px
+    .btn
+        font-size: 14px
+        padding: 10px 15px
+        &-transparent
+            margin-left: 15px
+    .promo
+        min-height: 395px
+    .footer__wrapper
+        display: flex  
+        flex-direction: column
+    .footer__logo
+        margin-bottom: 20px
+    .why__item
+        width: 100%
+    .homepage__pic 
+        width: 70%
+
+@media (max-width: 400px)
+    .header__sign
+        display: none
+    .tabs
+        &__wrapper
+            flex-direction: column
+        &__tab
+            width: 100%
+            min-height: 315px
+            margin-bottom: 20px
+    .homepage__list
+        padding: 0 10px
+    .get-start 
+        margin-bottom: 30px
+    .help__title
+        font-size: 20px
+
+@media (max-width: 343px)
+    .footer__item
+        a
+            font-size: 13px
